@@ -14,7 +14,7 @@ export default class MenuPrincipal extends Phaser.Scene {
     encodedParams.append("accessToken", "<REQUIRED>");
     encodedParams.append("statisticId", "<REQUIRED>");
     
-    const options = {
+    /*const options = {
       method: 'POST',
       headers: {
         'content-type': 'application/x-www-form-urlencoded',
@@ -27,7 +27,7 @@ export default class MenuPrincipal extends Phaser.Scene {
     fetch('https://globalstatsraygorodskijv1.p.rapidapi.com/accomplishAnAchievement', options)
       .then(response => response.json())
       .then(response => console.log(response))
-      .catch(err => console.error(err));
+      .catch(err => console.error(err));*/
 
       
 

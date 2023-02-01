@@ -9,7 +9,7 @@ import Ganaste from "./scenes/Ganaste";
 import Tutorial from "./scenes/Tutorial";
 import Creditos from "./scenes/Creditos";
 import Preload from "./scenes/Preload";
-import UI from "./scenes/UI";
+
 
 const config = {
   type: Phaser.AUTO,
@@ -42,7 +42,6 @@ const config = {
     Tutorial,
     Creditos,
     Juego,
-    UI,
   ],
 };
 

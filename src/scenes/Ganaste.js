@@ -24,17 +24,17 @@ export default class Ganaste extends Phaser.Scene {
     });
 
     this.text = this.add
-      .text(550,370, getPhrase("SIGUIENTE"), { font: "130px Cocogoose" })
+      .text(550,370, getPhrase("SIGUIENTE"), { font: "130px Ultra" })
       .setScale(0.4);
 
     const botonmenu2 = this.add.image(700, 550, "BotonM").setScale(0.4);
     botonmenu2.setInteractive();
     botonmenu2.on("pointerdown", () => this.scene.start("MenuPrincipal"));
 
-    this.text = this.add.text(599, 520, getPhrase("MENU"), { font: "150px Cocogoose" }).setScale(0.4);
+    this.text = this.add.text(599, 520, getPhrase("MENU"), { font: "150px Ultra" }).setScale(0.4);
     
     this.text = this.add
-    .text(460, 100, getPhrase("GANASTE"), { font: "250px Cocogoose" })
+    .text(460, 100, getPhrase("GANASTE"), { font: "250px Ultra" })
     .setScale(0.4);
    
   }

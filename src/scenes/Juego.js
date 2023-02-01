@@ -1,5 +1,6 @@
 import Phaser from "phaser";
 import { sharedInstance as events } from "./EventCenter";
+import {UI} from "./UI";
 
 export default class Juego extends Phaser.Scene {
   player;
@@ -97,10 +98,6 @@ export default class Juego extends Phaser.Scene {
     this.platform.create(8200, 520, "p2");
     this.platform.create(9000, 330, "p2");
 
-    //LLEGADA
-
-    this.add.image(1250, 720, "teclas").setScale(0.5).setScrollFactor(0);
-    this.add.image(1250, 50, "cronometro").setScale(0.4).setScrollFactor(0);
 
     //PERSONAJE
 
@@ -192,6 +189,8 @@ export default class Juego extends Phaser.Scene {
     if (this.nivel == 1) {
       this.scene.launch("ui");
     }
+
+    this.UI=new UI (this);
   }
 
   update() {
@@ -224,6 +223,12 @@ export default class Juego extends Phaser.Scene {
     events.emit("point-changed", this.puntos);
 
     if (this.puntos == 30) {
+      this.UI.textopuntos.visible=false;
+      this.UI.textoinflador.visible=false;
+      this.UI.power.visible=false;
+      this.UI.infla.visible=false;
+      this.UI.crono.visible=false;
+      this.UI.teclas.visible=false;
       this.scene.start("Ganaste", { nivel: this.nivel });
     }
     return false;

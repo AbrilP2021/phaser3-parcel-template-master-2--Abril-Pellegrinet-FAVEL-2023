@@ -24,11 +24,11 @@ export default class Tutorial extends Phaser.Scene {
 
     
     this.text = this.add
-      .text(540, 100, getPhrase("TUTORIAL"), { font: "150px Cocogoose" } )
+      .text(540, 100, getPhrase("TUTORIAL"), { fontSize: "150px", fontFamily:"Ultra"} )
       .setScale(0.4);
 
     this.text = this.add
-    .text(80, 400, getPhrase("USA LAS FLECHAS DE TU TECLADO Y JUNTA TODOS LOS BRILLOS ANTES DE QUE TERMINE EL TIEMPO PARA PASAR AL SIGUIENTE NIVEL"), { font: "40px Cocogoose" })
+    .text(80, 400, getPhrase("USA LAS FLECHAS DE TU TECLADO Y JUNTA TODOS LOS BRILLOS ANTES DE QUE TERMINE EL TIEMPO PARA PASAR AL SIGUIENTE NIVEL"), { font: "40px Ultra" })
       .setScale(0.4);
   }
   
