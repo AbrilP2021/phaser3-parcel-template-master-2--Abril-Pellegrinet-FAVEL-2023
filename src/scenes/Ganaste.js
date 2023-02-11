@@ -10,8 +10,7 @@ export default class Ganaste extends Phaser.Scene {
   }
 
   create() {
-    console.log("nivel ", this.nivel);
-
+    
     if (this.nivel == 2) {
       this.scene.start("MenuPrincipal");
     }
@@ -24,7 +23,7 @@ export default class Ganaste extends Phaser.Scene {
     });
 
     this.text = this.add
-      .text(550,370, getPhrase("SIGUIENTE"), { font: "130px Ultra" })
+      .text(530,370, getPhrase("SIGUIENTE"), { font: "130px Ultra" })
       .setScale(0.4);
 
     const botonmenu2 = this.add.image(700, 550, "BotonM").setScale(0.4);
@@ -38,5 +37,5 @@ export default class Ganaste extends Phaser.Scene {
     .setScale(0.4);
    
   }
-  update() {}
+  
 }

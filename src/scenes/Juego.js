@@ -36,7 +36,7 @@ export default class Juego extends Phaser.Scene {
   preload() {}
 
   create() {
-    console.log("nivel ", this.nivel);
+    
     this.isGameOver = false;
 
     this.puntos = 0;
@@ -173,12 +173,10 @@ export default class Juego extends Phaser.Scene {
       this
     );
 
-
     //TIEMPO
 
-    this.TiempoInicial = this.nivel == 1 ? 90 : 70;
-    console.log("tiempoinicial" + this.TiempoInicial);
-
+    this.TiempoInicial = this.nivel == 1 ? 90 : 90;
+   
     this.TimeEvent = this.time.addEvent({
       delay: 1000,
       callback: this.timer,
@@ -214,13 +212,13 @@ export default class Juego extends Phaser.Scene {
   collectInflador(player, inflador) {
     inflador.disableBody (true, true);
     this.infla += 1;
-    events.emit("infla-changed", this.infla);
+    this.UI.textoinflador.setText (this.infla + "/5")
 
   }
   collectBrillo(player, brillo) {
     brillo.disableBody(true, true);
     this.puntos += 1;
-    events.emit("point-changed", this.puntos);
+    this.UI.textopuntos.setText(this.puntos + "/30");
 
     if (this.puntos == 30) {
       this.UI.textopuntos.visible=false;
@@ -234,7 +232,6 @@ export default class Juego extends Phaser.Scene {
     return false;
   }
  
-
   gameOver() {
     this.isGameOver = true;
     this.time.removeEvent(this.TimeEvent);
@@ -242,11 +239,10 @@ export default class Juego extends Phaser.Scene {
   }
 
   timer() {
-    console.log("tiempo restante " + this.TiempoInicial);
+    
     if (!this.isGameOver) {
       this.TiempoInicial = this.TiempoInicial - 1;
-
-      events.emit("time-changed", this.TiempoInicial);
+      this.UI.timeText.setText (this.TiempoInicial)
 
       if (this.TiempoInicial == 0) {
         this.TimeEvent.paused = true;

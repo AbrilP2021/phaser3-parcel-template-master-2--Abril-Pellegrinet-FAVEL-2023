@@ -20,5 +20,4 @@ export default class Creditos extends Phaser.Scene {
     
     this.text = this.add.text(570, 380, "Abril Pellegrinet", { font: "70px Ultra" }) .setScale(0.4);
   }
-  update() {}
 }

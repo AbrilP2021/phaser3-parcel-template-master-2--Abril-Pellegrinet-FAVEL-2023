@@ -28,11 +28,7 @@ export default class Perdiste extends Phaser.Scene {
     .setScale(0.4);
 
     this.text = this.add
-    .text(550,370, getPhrase("REINICIAR"), { font: "130px Ultra" })
+    .text(528,370, getPhrase("REINICIAR"), { font: "130px Ultra" })
     .setScale(0.4);
-
-
-   
   }
-  update() {}
 }

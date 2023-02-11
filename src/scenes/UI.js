@@ -9,10 +9,9 @@ export class UI {
   }
 
   create() {
-    console.log("ui");
     this.power = this.scene.add.image(150, 60, "uipower").setScale(0.9).setScrollFactor(0);
 
-    this.textopuntos = this.scene.add.text(122, 40, "0/30", {
+    this.textopuntos = this.scene.add.text(122, 40, this.scene.puntos + "/30", {
       font: "40px Kanit",
     }).setScrollFactor(0);
 
@@ -29,23 +28,6 @@ export class UI {
     }).setScrollFactor(0);
 
     this.teclas = this.scene.add.image(1250, 720, "teclas").setScale(0.5).setScrollFactor(0);
-    
 
-    events.on("point-changed", this.handlePointChanged, this);
-    events.on("time-changed", this.handleTimeChanged, this);
-    events.on("infla-changed", this.handleInflaChanged, this);
-  }
-
-  handlePointChanged(points) {
-    //console.log("puntos", points);
-    this.textopuntos.setText(points + "/30");
-
-  }
-
-  handleInflaChanged(infla) {
-    this.textoinflador.setText(infla + "/5"); }
-
-  handleTimeChanged(time) {
-    this.timeText.setText(time);
   }
 }
